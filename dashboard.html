@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | ISBAT Student Portal</title>
+
+  <!-- External CSS: all page layout -->
+  <link rel="stylesheet" href="portal.css">
+
+  <!-- Internal CSS: quick-links grid only -->
+  <style>
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .quick-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 130px;
+      padding: 22px 24px;
+      background: #fff;
+      border: 1px solid #D9DCE6;
+      border-left: 5px solid #1A1A2E;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #1F2233;
+    }
+
+    .quick-card:hover { border-left-color: #D9A93B; background: #FCFBF7; }
+    .quick-card:focus-visible { outline: 2px solid #D9A93B; outline-offset: 2px; }
+
+    .quick-card .q-label {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .quick-card .q-desc { display: block; color: #666A80; font-size: 14px; margin-top: 4px; }
+    .quick-card .q-link { font-weight: 600; font-size: 14px; color: #1A1A2E; }
+
+    @media (max-width: 560px) {
+      .quick-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo">
+      <div class="logo-mark">IS</div>
+      <span class="logo-text">ISBAT</span>
+    </div>
+    <div class="student-name">
+      <strong>Jassim</strong>
+      Diploma in IT
+    </div>
+    <nav class="nav">
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="courses.html">My Courses</a>
+      <a href="fees.html">Fee Statement</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="page-head">
+      <div>
+        <h1>Welcome, Jassim</h1>
+        <p class="date-line" id="today">Thursday, 26 November 2026</p>
+      </div>
+      <!-- Inline CSS: status badge colours -->
+      <span class="badge" style="background:#EAF3DE; color:#27500A;">Active</span>
+    </header>
+
+    <section class="metrics" aria-label="Summary">
+      <div class="metric-card">
+        <p class="metric-label">GPA</p>
+        <p class="metric-value">3.62</p>
+        <p class="metric-note">out of 4.00</p>
+      </div>
+      <div class="metric-card">
+        <p class="metric-label">Credit Hours</p>
+        <p class="metric-value">19</p>
+        <p class="metric-note">this semester</p>
+      </div>
+      <div class="metric-card">
+        <p class="metric-label">Outstanding Fee Balance</p>
+        <p class="metric-value">UGX 1,250,000</p>
+        <p class="metric-note">due this semester</p>
+      </div>
+    </section>
+
+    <h2>Quick links</h2>
+    <section class="quick-grid">
+      <a class="quick-card" href="dashboard.html">
+        <span>
+          <span class="q-label">Dashboard</span>
+          <span class="q-desc">Your summary and status</span>
+        </span>
+        <span class="q-link">Open dashboard</span>
+      </a>
+      <a class="quick-card" href="courses.html">
+        <span>
+          <span class="q-label">My Courses</span>
+          <span class="q-desc">Enrolled courses and weekly timetable</span>
+        </span>
+        <span class="q-link">View courses</span>
+      </a>
+      <a class="quick-card" href="fees.html">
+        <span>
+          <span class="q-label">Fee Statement</span>
+          <span class="q-desc">Payments and outstanding balance</span>
+        </span>
+        <span class="q-link">View statement</span>
+      </a>
+      <a class="quick-card" href="profile.html">
+        <span>
+          <span class="q-label">Update Profile</span>
+          <span class="q-desc">Contact details and personal information</span>
+        </span>
+        <span class="q-link">Edit profile</span>
+      </a>
+    </section>
+  </main>
+
+  <script>
+    // Show today's date (the static text above is the fallback)
+    document.getElementById("today").textContent =
+      new Date().toLocaleDateString("en-GB", {
+        weekday: "long", day: "numeric", month: "long", year: "numeric"
+      });
+  </script>
+</body>
+</html>
